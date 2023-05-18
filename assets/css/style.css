@@ -5,9 +5,8 @@ body {
 }
 
 textarea {
-  background: transparent;
+  background-color: grey;
   border: none;
-  resize: none;
   color: #000000;
   border-left: 1px solid black;
   padding: 10px;
@@ -20,7 +19,7 @@ textarea {
   padding-left: 0px;
   padding-right: 0px;
   padding-bottom: 0px;
-  width: 100%;
+  width: 120%;
   margin-bottom: 1px;
 }
 
@@ -39,8 +38,8 @@ textarea {
 
 .row {
   white-space: pre-wrap;
-  border-top: 1px solid white;
   height: 80px;
+  border-top: 1px solid white;
   width: 100%;
 }
 
@@ -52,16 +51,19 @@ textarea {
 
 .past {
   background-color: #d3d3d3;
-  color: white;
+  background: #d3d3d3;
+  /* color: white; */
 }
 
 .present {
   background-color: #ff6961;
+  background: #ff6961;
   color: white;
 }
 
 .future {
   background-color: #77dd77;
+  background:  #77dd77;
   color: white;
 }
 
@@ -79,10 +81,6 @@ textarea {
   transition: all 0.3s ease-in-out;
 }
 
-.msgSaved {
+.eventSaved {
   text-align: center;
-}
-
-.fa-check {
-  color: green;
 }

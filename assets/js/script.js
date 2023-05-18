@@ -3,13 +3,13 @@ $(document).ready(function() {
   // added arrays
   var dayHours = ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"];
   var scheduledEvents = [];
-  $("#currentDate").text(dayjs().format("dddd, MMMM Do"));
+  $("#currentDate").text(dayjs().format("dddd, MMMM D"));
   var currentHour = dayjs().hour();
 
   scheduledEvents = getDaysEvents();
 
   for(var i = 0; i < dayHours.length; i++) {
-    $("#"+i+"a").append("<section class='col-md-1 col-1' id='scheduleTime'><p>"+dayHours[i]+"</p></section>"+
+    $("#"+i).append("<section class='col-md-1 col-1' id='scheduleTime'><p>"+dayHours[i]+"</p></section>"+
                     "<form class='col-md-10 col-10' id='formSchedule"+i+"'><section class='form-group'>"+
                     "<textarea class='col-md-10 col-10 description scheduleText' rows='3' id='textSchedule"+i+"'></textarea>"+
                     "</section></form><button class='col-md-1 col-1 saveBtn' id='eventSave"+i+"'>"+
@@ -44,9 +44,9 @@ $(document).ready(function() {
         if ($("#textSchedule"+index).val() !== tempSchedEvents[index]) {
             scheduledEvents.splice(index, 1, $("#textSchedule"+index).val());
             localStorage.setItem("scheduledEvents", JSON.stringify(scheduledEvents));
-            $("#msgSaved").append("<div class='col-md-12 msgSaved'><p>The scheduled event has been saved <i class='fa fa-check' aria-hidden='true'></i></p></div>");
+            $("#eventSaved").append("<section class='col-md-12 eventSaved'><p>Your schedule has been updated! <i class='fa fa-save' aria-hidden='true'></i></p></section>");
             setTimeout(() => {
-                $("#msgSaved").empty();
+                $("#eventSaved").empty();
             }, 1000);
         }
         return;
