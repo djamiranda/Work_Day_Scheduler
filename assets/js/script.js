@@ -26,7 +26,14 @@ $(document.start(function () {
         
         $("#textSchedule"+i).val(scheduledEvents[i]);
         $("#eventSave"+i).on("click", eventSave);
-
     }
+    function getDaysEvents() {
+      var daysEvents = localStorage.getItem("scheduledEvents");
+      var tempSchedEvents = ["","","","","","","","",""];
 
-});
+      if (daysEvents) {
+          tempSchedEvents = JSON.parse(daysEvents);
+      }
+      return tempSchedEvents;
+  }
+}));
