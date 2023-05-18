@@ -1,6 +1,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
+  line-height: 1;
 }
 
 textarea {
@@ -10,18 +11,37 @@ textarea {
   color: #000000;
   border-left: 1px solid black;
   padding: 10px;
+  margin: 0px;
+  height:100%;
+  width:100%;
 }
 
+.form-group {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  width: 100%;
+  margin-bottom: 1px;
+}
+
+.col-md-10 {
+  max-width: 100%;
+  height: 79px;
+}
 .description {
   white-space: pre-wrap;
 }
 
 .time-block {
+  text-align: center;
   border-radius: 15px;
 }
 
 .row {
+  white-space: pre-wrap;
   border-top: 1px solid white;
+  height: 80px;
+  width: 100%;
 }
 
 .hour {
@@ -53,7 +73,16 @@ textarea {
   color: white;
 }
 
-.saveBtn i:hover {
+.fa-save:hover {
   font-size: 20px;
+  color: black;
   transition: all 0.3s ease-in-out;
+}
+
+.msgSaved {
+  text-align: center;
+}
+
+.fa-check {
+  color: green;
 }

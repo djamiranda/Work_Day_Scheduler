@@ -1,5 +1,5 @@
-// added start function
-$(document.start(function () {
+// added ready function
+$(document).ready(function() {
   // added arrays
   var dayHours = ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"];
   var scheduledEvents = [];
@@ -35,5 +35,21 @@ $(document.start(function () {
           tempSchedEvents = JSON.parse(daysEvents);
       }
       return tempSchedEvents;
+    }
+      function eventSave(event) {
+        var index = event.target.getAttribute("data-index");
+
+        var tempSchedEvents = getDaysEvents();
+
+        if ($("#textSchedule"+index).val() !== tempSchedEvents[index]) {
+            scheduledEvents.splice(index, 1, $("#textSchedule"+index).val());
+            localStorage.setItem("scheduledEvents", JSON.stringify(scheduledEvents));
+            $("#msgSaved").append("<div class='col-md-12 msgSaved'><p>The scheduled event has been saved <i class='fa fa-check' aria-hidden='true'></i></p></div>");
+            setTimeout(() => {
+                $("#msgSaved").empty();
+            }, 1000);
+        }
+        return;
+
   }
-}));
+});
