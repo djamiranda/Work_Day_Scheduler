@@ -1,3 +1,4 @@
+/* all styling provided with starter code except for commented*/
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -35,7 +36,7 @@ textarea {
   text-align: center;
   border-radius: 15px;
 }
-
+/* added height, width & border */
 .row {
   white-space: pre-wrap;
   height: 80px;
@@ -74,13 +75,13 @@ textarea {
   background-color: #06aed5;
   color: white;
 }
-
+/* updated hover for font awesome button */
 .fa-save:hover {
   font-size: 20px;
   color: black;
   transition: all 0.3s ease-in-out;
 }
-
+/* added for updated schedule message */
 .eventSaved {
   text-align: center;
 }
