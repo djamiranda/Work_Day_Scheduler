@@ -38,9 +38,9 @@ $(document).ready(function() {
     }
       function eventSave(event) {
         var index = event.target.getAttribute("data-index");
-
+        console.log(index)
         var tempSchedEvents = getDaysEvents();
-
+        console.log(tempSchedEvents)
         if ($("#textSchedule"+index).val() !== tempSchedEvents[index]) {
             scheduledEvents.splice(index, 1, $("#textSchedule"+index).val());
             localStorage.setItem("scheduledEvents", JSON.stringify(scheduledEvents));
